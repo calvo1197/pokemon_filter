@@ -1,8 +1,10 @@
 <template>
   <header class="header">
     <Nav />
-    <router-view />
   </header>
+  <body class="body-container">
+    <router-view />
+  </body>
   <footer class="footer">
 
   </footer>
@@ -27,14 +29,17 @@ export default {
   color: #2c3e50;
 }
 
-.header {
-  background-color: #eeeeee;
-  background-image: url('./assets/Backgrounds/Bg_Header.png')
-}
-
 .footer {
 background-color: #eeeeee;
-background-image: url('./assets/Backgrounds/Bg_Footer.png')
+background-image: url('./assets/Backgrounds/Bg_Footer.png');
+background-size: contain;
+}
+
+.body-container {
+  background-color: #eeeeee;
+  background-image: url('./assets/Backgrounds/Bg_Header.png');
+  background-size: contain;
+  padding-top: 65px;
 }
 
 body {

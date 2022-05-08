@@ -5,13 +5,13 @@
         <img class="nav-img" src="../../assets/logo_full_color.svg" alt="" onclick="">
       </div>
       <div class="button-container">
-        <button class="button-p">
+        <button class="button button-p">
           Inicio
         </button>
-        <button class="button-p">
+        <button class="button button-p">
           Beneficios
         </button>
-        <button class="button-s">
+        <button class="button button-s">
           Registro
         </button>
       </div>
@@ -35,8 +35,9 @@ export default {
 
 <style>
 nav {
-  padding: 30px;
-  /* position: fixed; */
+  position: fixed;
+  background-color: white;
+  align-items: center;
 }
 nav a {
   font-weight: bold;
@@ -44,18 +45,21 @@ nav a {
 }
 
 .nav-img {
-  width: 50%;
+  width: 200px;
   cursor: pointer;
+  margin-left: 50px;
 }
 
 .nav-img-container {
-  justify-content: left;
+  text-align: left;
 }
 
 .nav-container {
   justify-content: space-between;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-content: center;
+  height: 70px;
 }
 
 .button-container {
@@ -65,7 +69,7 @@ nav a {
   align-items: center;
 }
 
-.button-p {
+.button {
   width: 200px;
   font-size: 16px;
   border: none;
@@ -74,23 +78,19 @@ nav a {
   border: 0px solid #a3cc39;
   border-radius: 50px;
   height: 40px;
+  cursor: pointer;
+  background-color: #ffffff;
+
 }
+
 .button-p:hover {
   color: #ffffff;
   background: #a3cc39;
 }
 
 .button-s {
-  width: 200px;
-  height: 40px;
-  font-size: 16px;
   border: 1px solid #2aa7df;
   color: #2aa7df;
-  border-radius: 50px;
-  justify-content: center;
-  cursor: pointer;
-  font-family: 'Montserrat-semibold';
-  transition: 0.5s;
 }
 
 .button-s:hover {

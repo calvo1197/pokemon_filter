@@ -1,5 +1,7 @@
 <template>
-  <h2>esto es landing</h2>
+  <div class="body-container">
+    <h2>esto es landing</h2>
+  </div>
 </template>
 
 <script>
@@ -16,4 +18,7 @@ export default {
 </script>
 
 <style>
+.body-container {
+  height: 1000px;
+}
 </style>
