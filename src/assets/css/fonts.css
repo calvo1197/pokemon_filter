@@ -1,0 +1,178 @@
+/* Montserrat */
+
+@font-face {
+  font-family: "Montserrat-Black";
+  src: url('../Fonts/Montserrat/Montserrat-Black.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-BlackItalic.ttf";
+  src: url('../Fonts/Montserrat/Montserrat-BlackItalic.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-BoldItalic";
+  src: url('../Fonts/Montserrat/Montserrat-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraBold";
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraBoldItalic";
+  src: url('../Fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraLight";
+  src: url('../Fonts/Montserrat/Montserrat-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraLightItalic";
+  src: url('../Fonts/Montserrat/Montserrat-ExtraLightItalic.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-Italic";
+  src: url('../Fonts/Montserrat/Montserrat-Italic.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url('../Fonts/Montserrat/Montserrat-Light.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-LightItalic";
+  src: url('../Fonts/Montserrat/Montserrat-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url('../Fonts/Montserrat/Montserrat-Medium.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-MediumItalic";
+  src: url('../Fonts/Montserrat/Montserrat-MediumItalic.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url('../Fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url('../Fonts/Montserrat/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-SemiBoldItalic";
+  src: url('../Fonts/Montserrat/Montserrat-SemiBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-Thin";
+  src: url('../Fonts/Montserrat/Montserrat-Thin.ttf');
+}
+
+@font-face {
+  font-family: "Montserrat-ThinItalic";
+  src: url('../Fonts/Montserrat/Montserrat-ThinItalic.ttf');
+}
+
+/* Fira Sans */
+
+@font-face {
+  font-family: "FiraSans-Black";
+  src: url('../Fonts/Fira_Sans/FiraSans-Black.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-BlackItalic";
+  src: url('../Fonts/Fira_Sans/FiraSans-BlackItalic.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-Bold";
+  src: url('../Fonts/Fira_Sans/FiraSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-BoldItalic";
+  src: url('../Fonts/Fira_Sans/FiraSans-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-ExtraBold";
+  src: url('../Fonts/Fira_Sans/FiraSans-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-ExtraBoldItalic";
+  src: url('../Fonts/Fira_Sans/FiraSans-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-ExtraLight";
+  src: url('../Fonts/Fira_Sans/FiraSans-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-Italic";
+  src: url('../Fonts/Fira_Sans/FiraSans-Italic.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-Light";
+  src: url('../Fonts/Fira_Sans/FiraSans-Light.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-LightItalic";
+  src: url('../Fonts/Fira_Sans/FiraSans-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-Medium";
+  src: url('../Fonts/Fira_Sans/FiraSans-Medium.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-MediumItalic";
+  src: url('../Fonts/Fira_Sans/FiraSans-Black.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-Regular";
+  src: url('../Fonts/Fira_Sans/FiraSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-SemiBold";
+  src: url('../Fonts/Fira_Sans/FiraSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-SemiBoldItalic";
+  src: url('../Fonts/Fira_Sans/FiraSans-SemiBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-Thin";
+  src: url('../Fonts/Fira_Sans/FiraSans-Thin.ttf');
+}
+
+@font-face {
+  font-family: "FiraSans-ThinItalic";
+  src: url('../Fonts/Fira_Sans/FiraSans-ThinItalic.ttf');
+}
