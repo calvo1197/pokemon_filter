@@ -5,13 +5,13 @@
         <img class="nav-img" src="../../assets/logo_full_color.svg" alt="" onclick="">
       </div>
       <div class="button-container">
-        <button class="button button-p">
+        <button class="button button-p shake">
           Inicio
         </button>
-        <button class="button button-p">
+        <button class="button button-p shake">
           Beneficios
         </button>
-        <button class="button button-s">
+        <button class="button button-s shake">
           Registro
         </button>
       </div>
@@ -39,6 +39,7 @@ nav {
   background-color: white;
   align-items: center;
   width: 95%;
+  z-index: 100;
 }
 nav a {
   font-weight: bold;

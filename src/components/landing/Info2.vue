@@ -1,0 +1,96 @@
+<template>
+  <div class="body-container content">
+      <div class="text-container font-semibold" style="margin-bottom: 20px;">
+        <h1>
+          Entre los beneficios que ofrecemos se encuentran&nbsp;
+        </h1>
+        <h1 class="font-blue">
+          {{';)'}}
+        </h1>
+      </div>
+    <container class="icon-items" >
+      <div v-for="icon in icons" :key="icon.icon">
+        <img class="img-landing" style="margin-bottom: 20px;" :src="getImgUrl(icon)" alt="">
+        <h2 class="font-normal" style="font-size: 18px">
+          {{icon.text}}
+        </h2>
+      </div>
+    </container>
+  </div>
+
+  <div class="body-container content">
+    <h2 class="font-semibold">
+      Gracias por&nbsp;
+    </h2>
+    <h2 class="font-semibold font-blue">
+      Completar el ejercicio
+    </h2>
+    <h2 class="font-normal">
+      Te invitamos a ver más información
+    </h2>
+    <button class="button button-more shake" @click="goToTwitter">
+      Conocer mas
+    </button>
+  </div>
+</template>
+
+<script>
+import { reactive } from 'vue'
+
+export default {
+  name: 'info2-page',
+  props: {},
+  setup (props, context) {
+    const icons = reactive([
+      { icon: 'Ic_Hour', text: 'Flexibilidad Horaria' },
+      { icon: 'Ic_HomeOffice', text: 'Home Office' },
+      { icon: 'Ic_Workshops', text: 'Capacitaciones y Workshops' },
+      { icon: 'Ic_DrinkSnacks', text: 'Snacks, frutas y bebidas gratis' },
+      { icon: 'Ic_laptop', text: 'Semana Remota' },
+      { icon: 'Ic_brain', text: 'Trabajar en últimas tecnologías' }
+    ])
+    function getImgUrl (icon) {
+      return require(`../../assets/${icon.icon}.svg`)
+    }
+    return {
+      icons,
+      getImgUrl
+    }
+  }
+}
+</script>
+
+<style scoped>
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  justify-content: center;
+  height: 400px;
+  background-color: #ffffff
+}
+
+.text-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.icon-items{
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 20px;
+}
+
+.button-more {
+  border: 1px solid #2aa7df;
+  color: #ffffff;
+  background: #2aa7df;
+}
+
+.button-more:hover {
+  color: #2aa7df;
+  background: #ffffff;
+}
+</style>

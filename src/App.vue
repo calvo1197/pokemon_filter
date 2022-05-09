@@ -39,7 +39,6 @@ background-size: contain;
   background-color: #ffffff;
   background-image: url('./assets/Backgrounds/Bg_Header.png');
   background-size: contain;
-  padding-top: 65px;
 }
 
 body {
@@ -54,15 +53,49 @@ body {
   font-family: 'Montserrat-Medium';
 }
 
+.font-semibold {
+  font-family: 'Montserrat-SemiBold';
+}
+
+.font-green {
+ color: #a3cc39;
+}
+
+.font-blue {
+ color: #2aa7df;
+}
+
 h2 {
   margin-top: 0;
   margin-bottom: 0;
 }
-/*
-center {
-  text-align: center;
-  align-items: center;
-  align-content: center;
-} */
+
+.shake:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
 
 </style>
