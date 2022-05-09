@@ -1,5 +1,5 @@
 <template>
-  <div class="body-container content">
+  <container class="body-container content">
     <div class="label-container lbc-positionl" style="margin-left: 50px;">
       <h2 class="font-normal">
         Bienvenido a tu&nbsp;
@@ -17,8 +17,8 @@
     <div>
       <img class="img-landing" src="../../assets/Img_Hero/Ic_ilustra_Hero.png" alt="">
     </div>
-  </div>
-  <div class="body-container content">
+  </container>
+  <container class="body-container content">
     <div class="img-container" style="background-color: #eeeeee">
       <img class="img-landing" src="../../assets/img_woloxer.png" alt="">
       <div class="centered">
@@ -57,7 +57,7 @@
         </h2>
       </div>
     </div>
-  </div>
+  </container>
 </template>
 
 <script>

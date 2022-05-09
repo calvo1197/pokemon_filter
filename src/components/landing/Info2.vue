@@ -1,6 +1,7 @@
 <template>
-  <div class="body-container content">
-      <div class="text-container font-semibold" style="margin-bottom: 20px;">
+  <container class="body-container content">
+    <div class="content-back">
+      <div class="text-container font-semibold" style="margin: 30px;">
         <h1>
           Entre los beneficios que ofrecemos se encuentran&nbsp;
         </h1>
@@ -8,30 +9,33 @@
           {{';)'}}
         </h1>
       </div>
-    <container class="icon-items" >
-      <div v-for="icon in icons" :key="icon.icon">
-        <img class="img-landing" style="margin-bottom: 20px;" :src="getImgUrl(icon)" alt="">
-        <h2 class="font-normal" style="font-size: 18px">
-          {{icon.text}}
-        </h2>
+      <div class="icon-items">
+        <div v-for="icon in icons" :key="icon.icon">
+          <img class="img-landing" style="margin: 20px;" :src="getImgUrl(icon)" alt="">
+          <h2 class="font-normal" style="font-size: 18px">
+            {{icon.text}}
+          </h2>
+        </div>
       </div>
-    </container>
-  </div>
+    </div>
+  </container>
 
-  <div class="body-container content">
-    <h2 class="font-semibold">
-      Gracias por&nbsp;
-    </h2>
-    <h2 class="font-semibold font-blue">
-      Completar el ejercicio
-    </h2>
-    <h2 class="font-normal">
-      Te invitamos a ver más información
-    </h2>
+  <container class="body-container content" style="justify-items: center;">
+    <div class="thanks">
+      <h2 class="font-semibold">
+        Gracias por&nbsp;
+      </h2>
+      <h2 class="font-semibold font-blue">
+        completar el ejercicio
+      </h2>
+    </div>
+      <h2 class="font-normal" style="margin-bottom: 40px;">
+        Te invitamos a ver más información
+      </h2>
     <button class="button button-more shake" @click="goToTwitter">
       Conocer mas
     </button>
-  </div>
+  </container>
 </template>
 
 <script>
@@ -93,4 +97,17 @@ export default {
   color: #2aa7df;
   background: #ffffff;
 }
+
+.content-back {
+  background-color: #ffffff;
+  height: 400px;
+}
+
+.thanks {
+ font-size: 30px;
+ margin-bottom: 20px;
+ display: flex;
+ justify-content: center;
+}
+
 </style>

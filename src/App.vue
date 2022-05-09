@@ -6,15 +6,16 @@
     <router-view />
   </body>
   <footer class="footer">
-
+    <Footer />
   </footer>
 </template>
 
 <script>
 import Nav from './components/static/Nav.vue'
+import Footer from './components/static/Footer.vue'
 import '@/assets/css/fonts.css'
 export default {
-  components: { Nav },
+  components: { Nav, Footer },
   setup () {
   }
 }
@@ -30,9 +31,10 @@ export default {
 }
 
 .footer {
-background-color: #ffffff;
-background-image: url('./assets/Backgrounds/Bg_Footer.png');
-background-size: contain;
+  background-color: #ffffff;
+  background-image: url('./assets/Backgrounds/Bg_Footer.png');
+  background-size: contain;
+  text-align-last: center;
 }
 
 .body-container {
