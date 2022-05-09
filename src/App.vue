@@ -2,7 +2,7 @@
   <header class="header">
     <Nav />
   </header>
-  <body class="body-container">
+  <body>
     <router-view />
   </body>
   <footer class="footer">
@@ -30,13 +30,13 @@ export default {
 }
 
 .footer {
-background-color: #eeeeee;
+background-color: #ffffff;
 background-image: url('./assets/Backgrounds/Bg_Footer.png');
 background-size: contain;
 }
 
 .body-container {
-  background-color: #eeeeee;
+  background-color: #ffffff;
   background-image: url('./assets/Backgrounds/Bg_Header.png');
   background-size: contain;
   padding-top: 65px;
@@ -45,5 +45,24 @@ background-size: contain;
 body {
   margin: 0;
 }
+
+.font-normal {
+  font-family: 'Montserrat-ExtraLight';
+}
+
+.font-bold {
+  font-family: 'Montserrat-Medium';
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/*
+center {
+  text-align: center;
+  align-items: center;
+  align-content: center;
+} */
 
 </style>

@@ -38,6 +38,7 @@ nav {
   position: fixed;
   background-color: white;
   align-items: center;
+  width: 95%;
 }
 nav a {
   font-weight: bold;
@@ -55,9 +56,9 @@ nav a {
 }
 
 .nav-container {
-  justify-content: space-between;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
   align-content: center;
   height: 70px;
 }
@@ -80,7 +81,6 @@ nav a {
   height: 40px;
   cursor: pointer;
   background-color: #ffffff;
-
 }
 
 .button-p:hover {
