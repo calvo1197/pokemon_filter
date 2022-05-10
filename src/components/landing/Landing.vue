@@ -10,8 +10,7 @@ export default {
   name: 'landing-page',
   components: { Info1, Info2 },
   props: {},
-  setup (props, context) {
-    // const total = `Total price (50% offer): ${props.price / 2}`;
+  setup () {
     return {
     }
   }

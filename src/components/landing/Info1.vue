@@ -8,7 +8,7 @@
         Entrevista técnica&nbsp;
       </h2>
       <h2 class="font-normal">
-        en &nbsp;
+        en&nbsp;
       </h2>
       <h2 class="font-bold font-green">
         Wolox
@@ -20,7 +20,7 @@
   </section>
   <section class="body-container content">
     <div class="img-container" style="background-color: #eeeeee">
-      <img class="img-landing" src="../../assets/img_woloxer.png" alt="Img_woloxer">
+      <img class="img-twitter" src="../../assets/img_woloxer.png" alt="Img_woloxer">
       <div class="centered">
         <div class="inline-flex">
           <h2 class="font-bold font-green">
@@ -78,7 +78,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -104,6 +104,14 @@ export default {
 
 .img-landing {
   max-width: 100%;
+  height: auto;
+  object-fit:cover;
+  margin: 20px auto;
+}
+
+.img-twitter {
+  max-width: 100%;
+  width: 100%;
   height: auto;
   object-fit:cover;
 }
@@ -139,6 +147,7 @@ export default {
 .tw-icon {
   color: white;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .button-tw {
@@ -153,6 +162,52 @@ export default {
   height: 40px;
   cursor: pointer;
   background-color: transparent;
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    align-items: center;
+    padding-top: 100px;
+  }
+  .label-container {
+    font-size: 25px;
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    align-items: center;
+    padding-top: 100px;
+  }
+  .label-container {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  .font-normal {
+    font-family: 'Montserrat-ExtraLight';
+    font-size: 25px;
+  }
+
+  .font-bold {
+    font-family: 'Montserrat-Medium';
+    font-size: 25px;
+  }
+
+  .font-blue {
+    font-size: 25px;
+  }
+
+  .font-semibold {
+    font-family: 'Montserrat-SemiBold';
+    font-size: 20px;
+  }
 }
 
 </style>

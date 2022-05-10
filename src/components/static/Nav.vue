@@ -1,31 +1,37 @@
 <template>
-  <nav>
-    <div class="nav-container">
-      <div class="nav-img-container">
-         <router-link to="/landing">
-          <img class="nav-img" src="../../assets/logo_full_color.svg" alt="Logo">
-         </router-link>
+  <nav class="navbar">
+    <router-link to="/landing">
+      <img class="nav-img" src="../../assets/logo_full_color.svg" alt="Logo">
+    </router-link>
+    <div class="alignLast">
+    <input type="checkbox" id="toggler">
+      <label for="toggler">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+      <div class="menu">
+        <ul class="list">
+          <li v-if="route.path === '/landing'">
+            <button class="button button-p shake" @click="scrollToElement('home')">
+              Inicio
+            </button>
+          </li>
+          <li v-else>
+             <button class="button button-p shake">
+              <router-link to="/landing">Inicio</router-link>
+            </button>
+          </li>
+          <li v-if="route.path === '/landing'">
+            <button class="button button-p shake" @click="scrollToElement('benefits')">
+              Beneficios
+            </button>
+          </li>
+          <li v-if="route.path === '/landing'">
+            <button class="button button-s shake">
+              <router-link to="/register">Registro</router-link>
+            </button>
+          </li>
+        </ul>
       </div>
-      <container v-if="route.path === '/landing'" >
-        <div class="button-container">
-          <button class="button button-p shake" @click="scrollToElement('home')">
-            Inicio
-          </button>
-          <button class="button button-p shake" @click="scrollToElement('benefits')">
-            Beneficios
-          </button>
-          <button class="button button-s shake">
-            <router-link to="/register">Registro</router-link>
-          </button>
-        </div>
-      </container>
-      <container v-else>
-         <div class="button-container" style="justify-content: end;">
-          <button class="button button-p shake">
-            <router-link to="/landing">Inicio</router-link>
-          </button>
-        </div>
-      </container>
     </div>
   </nav>
 </template>
@@ -37,7 +43,6 @@ export default {
   props: { scrollToElement: { type: Function } },
   setup () {
     const route = useRoute()
-    console.log(route.path)
     return {
       route
     }
@@ -46,17 +51,6 @@ export default {
 </script>
 
 <style>
-nav {
-  position: fixed;
-  background-color: white;
-  align-items: center;
-  width: 95%;
-  z-index: 100;
-}
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
 .nav-img {
   width: 200px;
@@ -68,12 +62,68 @@ nav a {
   text-align: left;
 }
 
-.nav-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
   align-content: center;
-  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+#toggler,
+.navbar label {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .alignLast {
+    text-align-last: right;
+  }
+
+  .list {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align-last: center;
+  }
+
+  .navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #toggler:checked ~ .menu {
+    max-height: 100%;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .nav-img {
+    width: 100px;
+    cursor: pointer;
+    margin-left: 0px;
+  }
 }
 
 .button-container {

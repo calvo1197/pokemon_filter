@@ -20,7 +20,7 @@
     </div>
   </section>
 
-  <section class="body-container content" style="justify-items: center;">
+  <section class="body-container" style="justify-items: center; margin-bottom: 20px;">
     <div class="thanks">
       <h2 class="font-semibold">
         Gracias por&nbsp;
@@ -110,8 +110,54 @@ export default {
 .thanks {
  font-size: 30px;
  margin-bottom: 20px;
- display: flex;
  justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    align-content: center;
+    justify-content: center;
+    height: 400px;
+    background-color: #ffffff;
+    margin-bottom: 50px;
+    margin-bottom: 200px;
+  }
+
+  .icon-items {
+    flex-flow: row wrap;
+  }
+
+  .thanks {
+  font-size: 25px;
+  margin-bottom: 20px;
+  justify-content: center;
+  }
+}
+
+/* @media screen and (max-width: 900px) {
+  .content {
+    margin-bottom: 200px;
+  }
+} */
+
+@media screen and (max-width: 760px) {
+  .content {
+    align-content: center;
+    justify-content: center;
+    height: 400px;
+    background-color: #ffffff;
+    margin-bottom: 800px;
+  }
+
+  .icon-items {
+    display: inline-block;
+  }
+
+  .thanks {
+  font-size: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+  }
 }
 
 </style>
