@@ -15,6 +15,11 @@ const routes = [
     path: '/register',
     name: 'register',
     component: () => import('../components/landing/Register.vue')
+  },
+  {
+    path: '/pokemon',
+    name: 'pokemon',
+    component: () => import('../components/pokemon/Pokemon.vue')
   }
 ]
 
