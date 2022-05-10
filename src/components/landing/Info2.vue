@@ -1,5 +1,5 @@
 <template>
-  <container class="body-container content">
+  <section id="benefits" class="body-container content">
     <div class="content-back">
       <div class="text-container font-semibold" style="margin: 30px;">
         <h1>
@@ -11,16 +11,16 @@
       </div>
       <div class="icon-items">
         <div v-for="icon in icons" :key="icon.icon">
-          <img class="img-landing" style="margin: 20px;" :src="getImgUrl(icon)" alt="">
+          <img class="img-landing" style="margin: 20px;" :src="getImgUrl(icon)" alt="pc_landing">
           <h2 class="font-normal" style="font-size: 18px">
             {{icon.text}}
           </h2>
         </div>
       </div>
     </div>
-  </container>
+  </section>
 
-  <container class="body-container content" style="justify-items: center;">
+  <section class="body-container content" style="justify-items: center;">
     <div class="thanks">
       <h2 class="font-semibold">
         Gracias por&nbsp;
@@ -32,10 +32,10 @@
       <h2 class="font-normal" style="margin-bottom: 40px;">
         Te invitamos a ver más información
       </h2>
-    <button class="button button-more shake" @click="goToTwitter">
+    <button class="button button-more shake" @click="goToWolox">
       Conocer mas
     </button>
-  </container>
+  </section>
 </template>
 
 <script>
@@ -56,9 +56,13 @@ export default {
     function getImgUrl (icon) {
       return require(`../../assets/${icon.icon}.svg`)
     }
+    function goToWolox () {
+      window.open('https://www.wolox.com.ar/', '_blank')
+    }
     return {
       icons,
-      getImgUrl
+      getImgUrl,
+      goToWolox
     }
   }
 }

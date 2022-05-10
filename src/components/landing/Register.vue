@@ -1,19 +1,27 @@
 <template>
-  <h2>esto es registro</h2>
+  <section class="body-container content">
+    <h2>Página de registro</h2>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'register-page',
   props: {},
-  setup (props, context) {
-    // const total = `Total price (50% offer): ${props.price / 2}`;
-
-    // return { total };
-    return 0
+  setup () {
+    return {
+    }
   }
 }
 </script>
 
 <style>
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  align-items: center;
+  padding-top: 100px;
+  height: 100%;
+}
 </style>

@@ -1,12 +1,12 @@
 <template>
   <header class="header">
-    <Nav />
+    <Nav :scrollToElement="scrollToElement" />
   </header>
   <body>
     <router-view />
   </body>
   <footer class="footer">
-    <Footer />
+    <Footer :scrollToElement="scrollToElement" />
   </footer>
 </template>
 
@@ -17,6 +17,15 @@ import '@/assets/css/fonts.css'
 export default {
   components: { Nav, Footer },
   setup () {
+    function scrollToElement (sectionName) {
+      const el = document.getElementById(`${sectionName}`)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+    return {
+      scrollToElement
+    }
   }
 }
 </script>
@@ -98,6 +107,10 @@ h2 {
   60% {
     transform: translate3d(4px, 0, 0);
   }
+}
+
+a {
+  text-decoration: none;
 }
 
 </style>

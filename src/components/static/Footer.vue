@@ -1,13 +1,18 @@
 <template>
   <footer>
-      <img class="foot-img" src="../../assets/Ic_Wolox_Footer.svg" alt="footer" style="width: 10%;">
+    <img
+      class="foot-img" src="../../assets/Ic_Wolox_Footer.svg"
+      alt="footer"
+      style="width: 10%;"
+      @click="scrollToElement('home')"
+    >
   </footer>
 </template>
 
 <script>
 export default {
   name: 'footer-page',
-  props: {},
+  props: { scrollToElement: { type: Function } },
   setup () {
   }
 }
@@ -18,4 +23,5 @@ export default {
   width: 200px;
   cursor: pointer;
 }
+
 </style>

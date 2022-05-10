@@ -1,5 +1,5 @@
 <template>
-  <container class="body-container content">
+  <section id="home" class="body-container content">
     <div class="label-container lbc-positionl" style="margin-left: 50px;">
       <h2 class="font-normal">
         Bienvenido a tu&nbsp;
@@ -15,12 +15,12 @@
       </h2>
     </div>
     <div>
-      <img class="img-landing" src="../../assets/Img_Hero/Ic_ilustra_Hero.png" alt="">
+      <img class="img-landing" src="../../assets/Img_Hero/Ic_ilustra_Hero.png" alt="Ic_ilustra">
     </div>
-  </container>
-  <container class="body-container content">
+  </section>
+  <section class="body-container content">
     <div class="img-container" style="background-color: #eeeeee">
-      <img class="img-landing" src="../../assets/img_woloxer.png" alt="">
+      <img class="img-landing" src="../../assets/img_woloxer.png" alt="Img_woloxer">
       <div class="centered">
         <div class="inline-flex">
           <h2 class="font-bold font-green">
@@ -57,29 +57,28 @@
         </h2>
       </div>
     </div>
-  </container>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'info1-page',
   props: {},
-  setup (props, context) {
+  setup () {
     function goToTwitter () {
       window.open('https://twitter.com/wolox', '_blank')
     }
     return {
       goToTwitter
     }
-  },
-  mounted () {
-    console.log('hola') // 0
   }
+  // mounted () {
+  // }
 
 }
 </script>
 
-<style scoped>
+<style>
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;

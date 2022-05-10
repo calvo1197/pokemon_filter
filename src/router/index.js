@@ -4,7 +4,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    redirect: '/landing'
+    component: () => import(/* webpackChunkName: "landing" */ '../components/landing/Landing.vue')
   },
   {
     path: '/landing',

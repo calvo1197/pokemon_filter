@@ -2,33 +2,45 @@
   <nav>
     <div class="nav-container">
       <div class="nav-img-container">
-        <img class="nav-img" src="../../assets/logo_full_color.svg" alt="" onclick="">
+         <router-link to="/landing">
+          <img class="nav-img" src="../../assets/logo_full_color.svg" alt="Logo">
+         </router-link>
       </div>
-      <div class="button-container">
-        <button class="button button-p shake">
-          Inicio
-        </button>
-        <button class="button button-p shake">
-          Beneficios
-        </button>
-        <button class="button button-s shake">
-          Registro
-        </button>
-      </div>
-      <!-- <router-link to="/register">Registro</router-link> -->
+      <container v-if="route.path === '/landing'" >
+        <div class="button-container">
+          <button class="button button-p shake" @click="scrollToElement('home')">
+            Inicio
+          </button>
+          <button class="button button-p shake" @click="scrollToElement('benefits')">
+            Beneficios
+          </button>
+          <button class="button button-s shake">
+            <router-link to="/register">Registro</router-link>
+          </button>
+        </div>
+      </container>
+      <container v-else>
+         <div class="button-container" style="justify-content: end;">
+          <button class="button button-p shake">
+            <router-link to="/landing">Inicio</router-link>
+          </button>
+        </div>
+      </container>
     </div>
   </nav>
 </template>
 
 <script>
+import { useRoute } from 'vue-router'
 export default {
-  name: 'register-page',
-  props: {},
-  setup (props, context) {
-    // const total = `Total price (50% offer): ${props.price / 2}`;
-
-    // return { total };
-    return 0
+  name: 'nav-page',
+  props: { scrollToElement: { type: Function } },
+  setup () {
+    const route = useRoute()
+    console.log(route.path)
+    return {
+      route
+    }
   }
 }
 </script>
