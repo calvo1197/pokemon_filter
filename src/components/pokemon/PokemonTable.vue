@@ -8,7 +8,7 @@
         </tr>
       </thead>
       <tbody class="table">
-        <tr v-for="poke in pokeResponse.results" :key="poke.icon">
+        <tr v-for="poke in pokeResponse" :key="poke.icon">
           <td>
             <img class="poke-img" :src="`${imgApi}/${poke.url.split('/')[6]}.png`" />
           </td>
@@ -22,10 +22,16 @@
 </template>
 
 <script>
+import { onUpdated } from 'vue'
+
 export default {
   name: 'pokemon-table',
   props: ['pokeResponse'],
   setup (props) {
+    onUpdated(() => {
+      console.log('PROPS', props.pokeResponse)
+    })
+
     const imgApi = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
     return {
       imgApi
@@ -36,13 +42,13 @@ export default {
 
 <style scoped>
 section {
-  height: 700px;
+  height: 500px;
   justify-self: center;
 }
 table{
   overflow-y: scroll;
   width: 250px;
-  height: 650px;
+  height: 500px;
   display: block;
 }
 

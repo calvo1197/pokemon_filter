@@ -4,11 +4,11 @@ function getPokemons (limit, offset) {
   return httpClient.get(`pokemon/?limit=${limit}&offset=${offset}`)
 }
 
-function getPrevOrNextPokemons (url) {
-  return httpClient.get(url)
+function getPokemonsByNameId (nameId) {
+  return httpClient.get(`pokemon/${nameId}/`)
 }
 
 export {
   getPokemons,
-  getPrevOrNextPokemons
+  getPokemonsByNameId
 }

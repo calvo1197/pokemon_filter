@@ -1,7 +1,17 @@
 <template>
   <container class="body-container center-screen">
-    <PokemonTable :pokeResponse="pokeResponse" />
-    <footer class="poke-footer">
+    <div class="poke-header">
+      <label style="margin-right: 20px">Nombre / id </label>
+      <input id="name" type="text" style="margin-right: 20px" @keydown.enter="getPokemonByNameId">
+      <button class="button button-s" style="height: 30px;" @click="getPokemonByNameId">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+    <p v-if="pokeResponse.results.length === 0">
+      No hay datos relacionados a la consulta.
+    </p>
+    <PokemonTable v-else :pokeResponse="pokeResponse.results" />
+    <footer class="poke-footer" v-if="pokeResponse.results.length > 0">
       <div class="select-box">
         <select id="pag-select" :onchange="selectOnChange">
           <option value="5">5</option>
@@ -11,10 +21,10 @@
           <option value="100">100</option>
         </select>
       </div>
-      <button class="button button-s shake" @click="getNextPokemons(pokeResponse.previous, false)">
+      <button class="button button-s shake" @click="getNextPokemons(false)">
         Anterior
       </button>
-      <button class="button button-s shake" @click="getNextPokemons(pokeResponse.next, true)">
+      <button class="button button-s shake" @click="getNextPokemons(true)">
         Siguiente
       </button>
     </footer>
@@ -23,7 +33,7 @@
 
 <script>
 import PokemonTable from './PokemonTable.vue'
-import { getPokemons } from '@/api/pokemon.api'
+import { getPokemons, getPokemonsByNameId } from '@/api/pokemon.api'
 import { reactive, onMounted } from 'vue'
 
 export default {
@@ -31,7 +41,9 @@ export default {
   components: { PokemonTable },
   props: {},
   setup () {
-    const pokeResponse = reactive({})
+    const pokeResponse = reactive({
+      results: []
+    })
     let prevOffset = ''
 
     onMounted(() => {
@@ -46,8 +58,7 @@ export default {
     }
 
     // if nextOrPrev go next if not go prev
-    function getNextPokemons (url, isNext) {
-      console.log('url: ' + url)
+    function getNextPokemons (isNext) {
       if (isNext) {
         prevOffset = pokeResponse.next.split('?')[1].split('&')[0].split('=')[1]
       } else {
@@ -68,10 +79,43 @@ export default {
       }
     }
 
+    function getPokemonByNameId () {
+      let name = ''
+      if (document.getElementById('name')) {
+        name = document.getElementById('name').value
+        if (name !== '') {
+          getPokemonsByNameId(name).then(response => {
+            const pokeObject = {
+              results: [{
+                name: response.data.name,
+                url: response.data.location_area_encounters.replace('encounters', '')
+              }]
+            }
+            Object.assign(pokeResponse, JSON.parse(JSON.stringify(pokeObject)))
+          }).catch(error => {
+            console.log('error', error)
+            const errorObject = {
+              results: []
+            }
+            Object.assign(pokeResponse, JSON.parse(JSON.stringify(errorObject)))
+          })
+        } else {
+          let el = ''
+          if (document.getElementById('pag-select')) {
+            el = document.getElementById('pag-select').value
+            getPokemonsLimit(el, prevOffset)
+          } else {
+            getPokemonsLimit(20, 0)
+          }
+        }
+      }
+    }
+
     return {
       pokeResponse,
       getNextPokemons,
-      selectOnChange
+      selectOnChange,
+      getPokemonByNameId
     }
   }
 }
@@ -84,11 +128,16 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* min-height: 85vh; */
 }
 
 .poke-footer {
   margin-bottom: 30px;
+}
+
+.poke-header {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
 }
 
 .button {
