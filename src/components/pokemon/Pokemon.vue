@@ -3,7 +3,7 @@
     <PokemonTable :pokeResponse="pokeResponse" />
     <footer class="poke-footer">
       <div class="select-box">
-        <select id="pag-select">
+        <select id="pag-select" :onchange="selectOnChange">
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="20" selected="selected">20</option>
@@ -11,10 +11,10 @@
           <option value="100">100</option>
         </select>
       </div>
-      <button class="button button-s shake" @click="getNextPokemons(pokeResponse.previous)">
+      <button class="button button-s shake" @click="getNextPokemons(pokeResponse.previous, false)">
         Anterior
       </button>
-      <button class="button button-s shake" @click="getNextPokemons(pokeResponse.next)">
+      <button class="button button-s shake" @click="getNextPokemons(pokeResponse.next, true)">
         Siguiente
       </button>
     </footer>
@@ -23,7 +23,7 @@
 
 <script>
 import PokemonTable from './PokemonTable.vue'
-import { getPokemons, getPrevOrNextPokemons } from '@/api/pokemon.api'
+import { getPokemons } from '@/api/pokemon.api'
 import { reactive, onMounted } from 'vue'
 
 export default {
@@ -32,33 +32,46 @@ export default {
   props: {},
   setup () {
     const pokeResponse = reactive({})
-    getPokemons().then(response => {
-      console.log('response: ', response.data)
-      Object.assign(pokeResponse, JSON.parse(JSON.stringify(response.data)))
+    let prevOffset = ''
+
+    onMounted(() => {
+      getPokemonsLimit(20, 0)
     })
 
-    // if nextOrPrev go next if not go prev
-    function getNextPokemons (url) {
-      getPrevOrNextPokemons(url).then(response => {
-        console.log('response: ', response.data)
+    function getPokemonsLimit (limit, offset) {
+      prevOffset = offset
+      getPokemons(limit, offset).then(response => {
         Object.assign(pokeResponse, JSON.parse(JSON.stringify(response.data)))
       })
     }
 
-    onMounted(() => {
-      var el = document.getElementById('pag-select').value
-      console.log('element', el)
-    })
+    // if nextOrPrev go next if not go prev
+    function getNextPokemons (url, isNext) {
+      console.log('url: ' + url)
+      if (isNext) {
+        prevOffset = pokeResponse.next.split('?')[1].split('&')[0].split('=')[1]
+      } else {
+        prevOffset = pokeResponse.previous.split('?')[1].split('&')[0].split('=')[1]
+      }
+      let el = ''
+      if (document.getElementById('pag-select')) {
+        el = document.getElementById('pag-select').value
+        getPokemonsLimit(el, prevOffset)
+      }
+    }
 
-    // function selectOnChange () {
-    //   var el = document.getElementById('pag-select').value
-    //   console.log('element', el)
-    // }
+    function selectOnChange () {
+      let el = ''
+      if (document.getElementById('pag-select')) {
+        el = document.getElementById('pag-select').value
+        getPokemonsLimit(el, prevOffset)
+      }
+    }
 
     return {
       pokeResponse,
-      getNextPokemons
-      // selectOnChange
+      getNextPokemons,
+      selectOnChange
     }
   }
 }

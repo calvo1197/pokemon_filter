@@ -1,7 +1,7 @@
 import httpClient from '@/router/httpClient'
 
-function getPokemons () {
-  return httpClient.get('pokemon/?limit=20&offset=0')
+function getPokemons (limit, offset) {
+  return httpClient.get(`pokemon/?limit=${limit}&offset=${offset}`)
 }
 
 function getPrevOrNextPokemons (url) {

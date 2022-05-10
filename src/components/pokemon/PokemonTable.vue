@@ -26,7 +26,6 @@ export default {
   name: 'pokemon-table',
   props: ['pokeResponse'],
   setup (props) {
-    console.log('props', props.pokeResponse)
     const imgApi = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
     return {
       imgApi
