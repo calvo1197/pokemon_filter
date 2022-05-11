@@ -27,7 +27,7 @@
           </li>
           <li v-if="route.path === '/landing'">
             <button class="button button-s shake">
-              <router-link to="/pokemon">Registro</router-link>
+              <router-link to="/pokemon">Pokemones</router-link>
             </button>
           </li>
         </ul>

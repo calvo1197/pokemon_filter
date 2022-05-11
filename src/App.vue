@@ -1,7 +1,7 @@
 <template>
-  <header class="header">
+  <nav class="header">
     <Nav :scrollToElement="scrollToElement" />
-  </header>
+  </nav>
   <body>
     <router-view />
   </body>

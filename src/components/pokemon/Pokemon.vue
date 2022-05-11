@@ -121,13 +121,20 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .center-screen {
   display: grid;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 130px;
+}
+
+@media screen and (max-width: 500px){
+  .center-screen {
+    padding-top: 60px;
+  }
 }
 
 .poke-footer {
