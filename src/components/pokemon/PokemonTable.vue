@@ -22,16 +22,10 @@
 </template>
 
 <script>
-import { onUpdated } from 'vue'
-
 export default {
   name: 'pokemon-table',
   props: ['pokeResponse'],
-  setup (props) {
-    onUpdated(() => {
-      console.log('PROPS', props.pokeResponse)
-    })
-
+  setup () {
     const imgApi = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
     return {
       imgApi
@@ -59,6 +53,24 @@ table{
 
 .button {
   max-width: 50%;
+}
+
+@media screen and (max-width: 500px){
+  section {
+    height: 350px;
+    justify-self: center;
+  }
+  table{
+    overflow-y: scroll;
+    width: 250px;
+    height: 350px;
+    display: block;
+  }
+
+  .poke-img {
+    width: 60%;
+    height: 60%;
+  }
 }
 
 </style>

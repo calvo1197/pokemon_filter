@@ -3,7 +3,7 @@
     <div class="poke-header">
       <label style="margin-right: 20px">Nombre / id </label>
       <input id="name" type="text" style="margin-right: 20px" @keydown.enter="getPokemonByNameId">
-      <button class="button button-s" style="height: 30px;" @click="getPokemonByNameId">
+      <button class="button button-s shake" style="height: 30px;" @click="getPokemonByNameId">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
     </div>
@@ -103,7 +103,7 @@ export default {
           let el = ''
           if (document.getElementById('pag-select')) {
             el = document.getElementById('pag-select').value
-            getPokemonsLimit(el, prevOffset)
+            getPokemonsLimit(el, 0)
           } else {
             getPokemonsLimit(20, 0)
           }

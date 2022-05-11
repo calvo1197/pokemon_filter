@@ -4,7 +4,9 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    redirectTo: '/landing'
+    redirect: to => {
+      return { path: '/landing' }
+    }
   },
   {
     path: '/landing',
