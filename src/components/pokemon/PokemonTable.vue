@@ -55,6 +55,24 @@ table{
   max-width: 50%;
 }
 
+@media screen and (max-height: 800px){
+  section {
+    height: 350px;
+    justify-self: center;
+  }
+  table{
+    overflow-y: scroll;
+    width: 250px;
+    height: 350px;
+    display: block;
+  }
+
+  .poke-img {
+    width: 60%;
+    height: 60%;
+  }
+}
+
 @media screen and (max-width: 500px){
   section {
     height: 350px;
