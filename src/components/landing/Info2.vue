@@ -105,6 +105,7 @@ export default {
 .content-back {
   background-color: #ffffff;
   height: 400px;
+  justify-self: center;
 }
 
 .thanks {
